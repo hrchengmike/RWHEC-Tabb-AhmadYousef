@@ -60,7 +60,25 @@ void CF1_2_one_camera(vector< vector<Matrix4d> >& As, vector<Matrix4d>& Bs, doub
 	}
 	out << endl;
 
+	double XM[16];
+	double ZM[16];
 
+	switch (param_type){
+	case Euler: {
+		Convert6ParameterEulerAngleRepresentationIntoMatrix(x, XM);
+		Convert6ParameterEulerAngleRepresentationIntoMatrix(z, ZM);
+	}	break;
+	case AxisAngle: {
+		Convert6ParameterAxisAngleRepresentationIntoMatrix(x, XM);
+		Convert6ParameterAxisAngleRepresentationIntoMatrix(z, ZM);
+	}	break;
+	case Cali_Quaternion: {
+		Convert7ParameterQuaternionRepresentationIntoMatrix(x, XM);
+		Convert7ParameterQuaternionRepresentationIntoMatrix(z, ZM);
+	}	break;
+	}
+	PrintMatrix(XM,4,4);
+	PrintMatrix(ZM,4,4);
 	delete [] A;
 	delete [] B;
 }

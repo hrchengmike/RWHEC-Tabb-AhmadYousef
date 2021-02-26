@@ -27,9 +27,9 @@ using ceres::Solve;
 
 using namespace std;
 
-
-int RobotWorldHandEyeCalibration(double square_mm_height, double square_mm_width,
-		int chess_h, int chess_w, string source_dir, string write_dir,  bool do_camcali, bool do_rwhec, bool do_reconstruction, bool verbose);
+int RobotWorldHandEyeCalibration(string source_dir, string write_dir);
+//int RobotWorldHandEyeCalibration(double square_mm_height, double square_mm_width,
+//		int chess_h, int chess_w, string source_dir, string write_dir,  bool do_camcali, bool do_rwhec, bool do_reconstruction, bool verbose);
 
 void WriteCaliFile(CaliObjectOpenCV2* CO, std::ofstream& out);
 

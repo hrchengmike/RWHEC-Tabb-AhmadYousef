@@ -9,17 +9,25 @@ include_directories(${CERES_INCLUDE_DIRS} /usr/local /usr/local/eigen3 /usr/loca
 link_directories( )
 
 
-add_executable(Tabb_AhmadYousef_RWHEC_Jun2018_Project
+#add_executable(Tabb_AhmadYousef_RWHEC_Jun2018_Project
+#CostFunctions.hpp
+#CostFunctions.cpp
+#Calibration2.hpp
+#Calibration2.cpp
+#StringFunctions.hpp
+#DirectoryFunctions.hpp
+#DirectoryFunctions.cpp
+#Tabb_AhmadYousef_RWHEC_Jun2018_main.hpp
+#Tabb_AhmadYousef_RWHEC_Jun2018_main.cpp
+#)
+
+#target_link_libraries(Tabb_AhmadYousef_RWHEC_Jun2018_Project ${CERES_LIBRARIES} opencv_core opencv_highgui opencv_imgproc opencv_calib3d opencv_imgcodecs)
+
+
+add_executable(ax_zb_cal
+ax_zb_cal.cpp
 CostFunctions.hpp
 CostFunctions.cpp
-Calibration2.hpp
-Calibration2.cpp
-StringFunctions.hpp
-DirectoryFunctions.hpp
-DirectoryFunctions.cpp
-Tabb_AhmadYousef_RWHEC_Jun2018_main.hpp
-Tabb_AhmadYousef_RWHEC_Jun2018_main.cpp
 )
 
-target_link_libraries(Tabb_AhmadYousef_RWHEC_Jun2018_Project ${CERES_LIBRARIES} opencv_core opencv_highgui opencv_imgproc opencv_calib3d opencv_imgcodecs)
-
+target_link_libraries(ax_zb_cal ${CERES_LIBRARIES} opencv_core opencv_highgui opencv_imgproc opencv_calib3d opencv_imgcodecs)
